@@ -1,0 +1,18 @@
+import random
+def guess_a_number():#arrgs not given because we are taking input
+    lower_bound=int(input("Enter the lower bound number: ")) #starting value
+    upper_bound=int(input("Enter the upper bound number: ")) #ending value
+
+    random_number=random.randint(lower_bound,upper_bound)#we are randomising the values
+    attempts=0
+    while True:
+        guess=int(input("Enter your guess: "))
+        attempts+=1
+
+        if guess==random_number:
+            print(f"Yay!! you guessed correctly after {attempts}.")
+            break
+        elif guess>random_number:
+            print("Your guess is too high!!")
+        elif guess<random_number:
+            print("Your guess is too low!!")
